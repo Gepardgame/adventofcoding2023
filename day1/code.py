@@ -1,5 +1,5 @@
 import re
-text = open("input1.txt", "r").read().split("\n")
+text = open("input.txt", "r").read().split("\n")
 digits1 = [ re.findall(r"\d", i) for i in text ]
 sum1 = [ int(i[0] + i[-1]) for i in digits1 ]
 print(sum(sum1))

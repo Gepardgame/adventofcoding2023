@@ -1,6 +1,6 @@
 import regex as re
 from aocd import get_data
-text = get_data(day, year=2023)
+text = get_data(day=6, year=2023)
 times = [ (int(i), int(j)) for i, j in zip(re.findall(r"(?<=Time:.*)\b\d+\b", text), re.findall(r"(?<=Distance:.*)\b\d+\b", text)) ]
 sum1 = [ int((-i-(i**2-4*j)**0.5)/(-2))-int((-i+(i**2-4*j)**0.5)/(-2))  for i, j in times ]
 print(sum1)

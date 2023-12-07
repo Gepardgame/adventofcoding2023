@@ -1,6 +1,6 @@
 import regex as re
 from aocd import get_data
-text = get_data(day, year=2023).split("\n")
+text = get_data(day=4, year=2023).split("\n")
 numbers1 = [ ( re.findall(r"\b\d+\b(?!:)(?=.+\|)", i), re.findall(r"(?<=\|.+)\b\d+\b", i) ) for i in text ]
 sum1 = [ int(2**(len(set(i).intersection(j))-1)) for i, j in numbers1 ]
 print(sum(sum1))

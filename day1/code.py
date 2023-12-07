@@ -1,5 +1,6 @@
 import re
-text = open("input.txt", "r").read().split("\n")
+from aocd import get_data
+text = get_data(day=1, year=2023).split("\n")
 digits1 = [ re.findall(r"\d", i) for i in text ]
 sum1 = [ int(i[0] + i[-1]) for i in digits1 ]
 print(sum(sum1))

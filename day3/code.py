@@ -1,5 +1,6 @@
 import re
-text = open("input.txt", "r").read()
+from aocd import get_data
+text = get_data(day=3, year=2023).split("\n")
 part_of = list(map(int, re.findall(r"(?<=[+*@/#$\-=&%])\d+|\d+(?=[+*@/#$\-=&%])", text)))
 sign = [ [ x.start() for x in  list(re.finditer(r"[+*@/#$\-=&%]", i))] for i in text.split("\n")[:-1] ]
 over = sign[1:]+[[-1]]

@@ -1,2 +1,3 @@
-text = open("input.txt", "r").read().split("\n")[:-1]
-
+from aocd import get_data
+text = get_data()
+print(text)
